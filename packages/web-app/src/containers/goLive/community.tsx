@@ -82,146 +82,22 @@ const Community: React.FC = () => {
           onChecked={() => onChange(!value)}
         >
           <Dl>
-            <Dt>{t('labels.review.eligibleVoters')}</Dt>
+            <Dd>{t('labels.multisigMembers')}</Dd>
+          </Dl>
+
+          <Dl>
+            <Dt>{t('labels.review.distribution')}</Dt>
             <Dd>
-              {membership === 'token'
-                ? t('createDAO.step3.tokenMembership')
-                : t('labels.multisigMembers')}
+              <Link
+                label={t('labels.review.distributionLink', {
+                  walletCount: multisigWallets.length,
+                })}
+                onClick={() => open('addresses')}
+              />
             </Dd>
           </Dl>
 
-          {membership === 'multisig' && (
-            <>
-              <Dl>
-                <Dt>{t('labels.review.distribution')}</Dt>
-                <Dd>
-                  <Link
-                    label={t('labels.review.distributionLink', {
-                      walletCount: multisigWallets.length,
-                    })}
-                    onClick={() => open('addresses')}
-                  />
-                </Dd>
-              </Dl>
-              <Dl>
-                <Dt>{t('labels.proposalCreation')}</Dt>
-                <Dd>
-                  {eligibilityType === 'anyone'
-                    ? t('labels.anyWallet')
-                    : t('labels.multisigMembers')}
-                </Dd>
-              </Dl>
-            </>
-          )}
-
-          {membership === 'token' && (
-            <>
-              <Dl>
-                <Dt>{t('votingTerminal.token')}</Dt>
-                <Dd>
-                  <div className="flex items-center space-x-1.5">
-                    <span>
-                      {t('labels.review.tokenSymbolGovernance')} {tokenName} (
-                      {govTokenSymbol})
-                    </span>
-
-                    {/* TODO: check the owner for token contract, if it belongs to
-                    dao add this */}
-                    {isCustomToken && (
-                      <Tag label={t('labels.new')} colorScheme="info" />
-                    )}
-
-                    {isGovTokenRequiresWrapping && (
-                      <Tag
-                        label={t('labels.review.tokenWrapped')}
-                        colorScheme="info"
-                      />
-                    )}
-                  </div>
-                </Dd>
-              </Dl>
-              {!isGovTokenRequiresWrapping && (
-                <Dl>
-                  <Dt>{t('labels.supply')}</Dt>
-                  <Dd>
-                    <div className="flex items-center space-x-1.5">
-                      <p>
-                        {formattedTotalSupply} {tokenSymbol}
-                      </p>
-                      {isCustomToken && (
-                        <Tag
-                          label={t('labels.mintable')}
-                          colorScheme="neutral"
-                        />
-                      )}
-                    </div>
-                  </Dd>
-                </Dl>
-              )}
-              {!isCustomToken && !isGovTokenRequiresWrapping && (
-                <Dl>
-                  <Dt>{t('labels.review.existingTokens.currentHolders')}</Dt>
-                  <Dd>
-                    <div className="flex items-center space-x-1.5">
-                      <p>{formattedTotalHolders}</p>
-                    </div>
-                  </Dd>
-                </Dl>
-              )}
-              {isGovTokenRequiresWrapping && (
-                <Dl>
-                  <Dt>{t('labels.supplyPotential')}</Dt>
-                  <Dd>
-                    <div className="space-y-0.5">
-                      <div>
-                        {formattedTotalSupply} {govTokenSymbol}
-                      </div>
-                      <div className="text-ui-400 ft-text-sm">
-                        {t('labels.supplyPotentialHelptext', {tokenSymbol})}
-                      </div>
-                    </div>
-                  </Dd>
-                </Dl>
-              )}
-              <Dl>
-                <Dt>{t('labels.review.distribution')}</Dt>
-                <Dd>
-                  {isCustomToken ? (
-                    <Link
-                      label={t('createDAO.review.distributionLink', {
-                        count: wallets?.length,
-                      })}
-                      onClick={() => open('addresses')}
-                    />
-                  ) : (
-                    <Link
-                      label={t('labels.review.distributionLinkLabel')}
-                      href={
-                        CHAIN_METADATA[network].explorer +
-                          '/token/tokenholderchart/' +
-                          tokenAddress?.address || tokenAddress
-                      }
-                      iconRight={<IconFeedback />}
-                      external
-                    />
-                  )}
-                </Dd>
-              </Dl>
-              <Dl>
-                <Dt>{t('labels.proposalCreation')}</Dt>
-                <Dd>
-                  {eligibilityType === 'token'
-                    ? t('createDAO.review.proposalCreation', {
-                        token: eligibilityTokenAmount,
-                        symbol: govTokenSymbol,
-                      })
-                    : t('createDAO.step3.eligibility.anyWallet.title')}
-                </Dd>
-              </Dl>
-            </>
-          )}
-
-          <CommunityAddressesModal tokenMembership={membership === 'token'} />
+          <CommunityAddressesModal tokenMembership={false} />
         </DescriptionListContainer>
       )}
     />

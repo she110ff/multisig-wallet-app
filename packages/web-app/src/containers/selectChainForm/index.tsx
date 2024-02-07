@@ -84,58 +84,6 @@ const SelectChainForm: React.FC = () => {
             onClick={() => setNetworkType('test')}
           />
         </NetworkTypeSwitcher>
-        {/* TODO: Enable this once we added more chains */}
-        {/* <SortFilter>
-          <Dropdown
-            align="end"
-            sideOffset={8}
-            style={{width: 234}}
-            trigger={
-              <ButtonText
-                label={labels?.[sortFilter]?.title}
-                mode="secondary"
-                size={isMobile ? 'small' : 'large'}
-                isActive={isOpen}
-                iconRight={<IconChevronDown />}
-              />
-            }
-            listItems={[
-              {
-                component: (
-                  <ListItemAction
-                    name="cost"
-                    mode={sortFilter === 'cost' ? 'selected' : 'default'}
-                    title={t('labels.networkCost')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-              {
-                component: (
-                  <ListItemAction
-                    name="popularity"
-                    mode={sortFilter === 'popularity' ? 'selected' : 'default'}
-                    title={t('labels.popularity')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-              {
-                component: (
-                  <ListItemAction
-                    name="security"
-                    mode={sortFilter === 'security' ? 'selected' : 'default'}
-                    title={t('labels.security')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-            ]}
-          />
-        </SortFilter> */}
       </Header>
       <FormItem>
         {networks[networkType]['cost'].map(selectedNetwork => (
@@ -198,15 +146,14 @@ type SelectableNetworks = Record<
 
 const networks: SelectableNetworks = {
   main: {
-    cost: ['polygon', 'ethereum'],
+    cost: ['bosagora_mainnet', 'ethereum'],
     // cost: ['polygon', 'arbitrum', 'ethereum'],
-    popularity: ['polygon', 'ethereum', 'arbitrum'],
-    security: ['ethereum', 'arbitrum', 'polygon'],
+    popularity: ['bosagora_mainnet', 'ethereum'],
+    security: ['ethereum', 'bosagora_mainnet'],
   },
   test: {
-    cost: ['mumbai', 'goerli'],
-    // cost: ['mumbai', 'arbitrum-test', 'goerli'],
-    popularity: ['mumbai', 'goerli', 'arbitrum-test'],
-    security: ['goerli', 'arbitrum-test', 'mumbai'],
+    cost: ['bosagora_devnet', 'goerli'],
+    popularity: ['bosagora_devnet', 'goerli'],
+    security: ['goerli', 'bosagora_devnet'],
   },
 };

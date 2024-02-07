@@ -16,15 +16,6 @@ function Hero() {
             <Title>{t('explore.hero.title')}</Title>
             <Subtitle>{t('explore.hero.subtitle1')}</Subtitle>
           </ContentWrapper>
-          <ImageWrapper>
-            <StyledImage src={Logo} />
-          </ImageWrapper>
-          <GradientContainer>
-            <GradientWrapper>
-              <GradientGreen src={Green} />
-              <GradientPurple src={Purple} />
-            </GradientWrapper>
-          </GradientContainer>
         </Wrapper>
       </GridLayout>
     </Container>

@@ -23,7 +23,7 @@ const DepositModal: React.FC = () => {
 
   const {data: daoDetails} = useDaoDetailsQuery();
 
-  const networkSupportsENS = ENS_SUPPORTED_NETWORKS.includes(network);
+  const networkSupportsENS = false;
 
   // NOTE: This login => network flow can and should be extracted
   // if later on we have a component that requires the same process

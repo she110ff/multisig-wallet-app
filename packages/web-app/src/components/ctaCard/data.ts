@@ -23,14 +23,14 @@ const CTACards = [
     subtitle: i18n.t('cta.learn.description'),
     title: i18n.t('cta.learn.title'),
   },
-  {
-    actionAvailable: false,
-    actionLabel: i18n.t('cta.build.actionLabel'),
-    path: '',
-    imgSrc: buildFaster,
-    subtitle: i18n.t('cta.build.description'),
-    title: i18n.t('cta.build.title'),
-  },
+  // {
+  //   actionAvailable: false,
+  //   actionLabel: i18n.t('cta.build.actionLabel'),
+  //   path: '',
+  //   imgSrc: buildFaster,
+  //   subtitle: i18n.t('cta.build.description'),
+  //   title: i18n.t('cta.build.title'),
+  // },
 ];
 
 export {CTACards};

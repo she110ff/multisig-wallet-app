@@ -1,17 +1,16 @@
-import {Client, Context as SdkContext, ContextParams} from '@aragon/sdk-client';
 import {
   LIVE_CONTRACTS,
   SupportedNetworksArray,
-} from '@aragon/sdk-client-common';
+  Client,
+  Context as SdkContext,
+  ContextParams,
+  SupportedNetwork,
+} from 'multisig-wallet-sdk-client';
 
 import {useNetwork} from 'context/network';
 import React, {createContext, useContext, useEffect, useState} from 'react';
 
-import {
-  CHAIN_METADATA,
-  SUBGRAPH_API_URL,
-  SupportedNetworks,
-} from 'utils/constants';
+import {CHAIN_METADATA, SupportedNetworks} from 'utils/constants';
 import {translateToAppNetwork, translateToNetworkishName} from 'utils/library';
 import {useWallet} from './useWallet';
 
@@ -52,23 +51,17 @@ export const UseClientProvider: React.FC = ({children}) => {
     ) {
       return;
     }
-
-    const ipfsNodes = [
-      {
-        url: `${CHAIN_METADATA[network].ipfs}/api/v0`,
-        headers: {
-          'X-API-KEY': (import.meta.env.VITE_IPFS_API_KEY as string) || '',
-        },
-      },
-    ];
+    const network2 = {
+      name: translatedNetwork,
+      chainId: CHAIN_METADATA[network].id,
+    };
 
     const contextParams: ContextParams = {
-      daoFactoryAddress: LIVE_CONTRACTS[translatedNetwork].daoFactory,
-      network: translatedNetwork,
+      walletFactoryAddress:
+        LIVE_CONTRACTS[translatedNetwork].MultiSigWalletFactoryAddress,
+      network: network2,
       signer: signer ?? undefined,
       web3Providers: CHAIN_METADATA[network].rpc[0],
-      ipfsNodes,
-      graphqlNodes: [{url: SUBGRAPH_API_URL[network]!}],
     };
 
     const sdkContext = new SdkContext(contextParams);

@@ -201,8 +201,13 @@ async function fetchTokenPrice(
  * @returns native token id
  */
 function getNativeTokenId(network: SupportedNetworks): string {
-  if (network === 'polygon' || network === 'mumbai') {
-    return NATIVE_TOKEN_ID.polygon;
+  if (
+    network === 'bosagora_mainnet' ||
+    network === 'bosagora_testnet' ||
+    network === 'bosagora_devnet' ||
+    network === 'localhost'
+  ) {
+    return NATIVE_TOKEN_ID.bosagora;
   }
 
   return NATIVE_TOKEN_ID.default;

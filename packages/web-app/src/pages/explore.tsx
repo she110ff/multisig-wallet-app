@@ -40,17 +40,6 @@ const Explore: React.FC = () => {
       <GridLayout>
         <ContentWrapper>
           <Carousel />
-          {/* Uncomment when statistics are available */}
-          {/* <StatisticsContainer>
-            {statistics.map((s: Stats) => (
-              <Statistic key={s.statKey}>
-                <StatisticValue>{s.statValue}</StatisticValue>
-                <StatisticKey>{s.statKey}</StatisticKey>
-              </Statistic>
-            ))}
-          </StatisticsContainer> */}
-          <DaoExplorer />
-          {/* <ActiveProposalsExplore /> */}
         </ContentWrapper>
       </GridLayout>
     </>

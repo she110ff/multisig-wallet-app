@@ -1,5 +1,4 @@
 import {useMemo} from 'react';
-import {LIVE_CONTRACTS, SupportedNetwork} from '@aragon/sdk-client-common';
 import {JsonRpcSigner, Web3Provider} from '@ethersproject/providers';
 import {JsonRpcProvider} from '@ethersproject/providers';
 import {
@@ -58,15 +57,17 @@ export const useWallet = (): IUseWallet => {
   const signer = useEthersSigner(chainId);
 
   const provider = useMemo(() => {
-    if (['mumbai', 'polygon'].includes(network)) {
-      return new JsonRpcProvider(CHAIN_METADATA[network].rpc[0], {
-        chainId: CHAIN_METADATA[network].id,
-        name: translateToNetworkishName(network),
-        ensAddress:
-          LIVE_CONTRACTS[translateToNetworkishName(network) as SupportedNetwork]
-            .ensRegistry,
-      });
-    } else return signer?.provider;
+    // if (
+    //   ['bosagora_mainnet', 'bosagora_testnet', 'bosagora_devnet'].includes(
+    //     network
+    //   )
+    // ) {
+    //   return new JsonRpcProvider(CHAIN_METADATA[network].rpc[0], {
+    //     chainId: CHAIN_METADATA[network].id,
+    //     name: translateToNetworkishName(network),
+    //   });
+    // } else return signer?.provider;
+    return signer?.provider;
   }, [network, signer?.provider]);
 
   const {data: wagmiBalance} = useBalance({

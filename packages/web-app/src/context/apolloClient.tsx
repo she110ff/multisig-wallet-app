@@ -106,16 +106,6 @@ export const goerliClient = new ApolloClient({
   link: restLink.concat(new HttpLink({uri: SUBGRAPH_API_URL['goerli']})),
 });
 
-const mumbaiClient = new ApolloClient({
-  cache,
-  link: restLink.concat(new HttpLink({uri: SUBGRAPH_API_URL['mumbai']})),
-});
-
-const arbitrumTestClient = new ApolloClient({
-  cache,
-  link: restLink.concat(new HttpLink({uri: SUBGRAPH_API_URL['arbitrum-test']})),
-});
-
 // TODO: remove undefined when all clients are defined
 const client: Record<
   SupportedNetworks,
@@ -123,10 +113,10 @@ const client: Record<
 > = {
   ethereum: undefined,
   goerli: goerliClient,
-  polygon: undefined,
-  mumbai: mumbaiClient,
-  arbitrum: undefined,
-  'arbitrum-test': arbitrumTestClient,
+  bosagora_mainnet: undefined,
+  bosagora_devnet: undefined,
+  bosagora_testnet: undefined,
+  localhost: undefined,
   unsupported: undefined,
 };
 
