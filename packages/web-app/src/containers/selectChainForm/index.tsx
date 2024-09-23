@@ -1,10 +1,4 @@
-import {
-  ButtonText,
-  // Dropdown,
-  // IconChevronDown,
-  // ListItemAction,
-  ListItemBlockchain,
-} from '@aragon/ui-components';
+import {ButtonText, ListItemBlockchain} from '@aragon/ui-components';
 import React, {useState} from 'react';
 import {Controller, useFormContext} from 'react-hook-form';
 import {useTranslation} from 'react-i18next';
@@ -14,10 +8,7 @@ import {useNetwork} from 'context/network';
 import useScreen from 'hooks/useScreen';
 import {CHAIN_METADATA, SupportedNetworks} from 'utils/constants';
 
-// import {trackEvent} from 'services/analytics';
-
 type NetworkType = 'main' | 'test';
-// type SortFilter = 'cost' | 'popularity' | 'security';
 
 const SelectChainForm: React.FC = () => {
   const {t} = useTranslation();
@@ -84,58 +75,6 @@ const SelectChainForm: React.FC = () => {
             onClick={() => setNetworkType('test')}
           />
         </NetworkTypeSwitcher>
-        {/* TODO: Enable this once we added more chains */}
-        {/* <SortFilter>
-          <Dropdown
-            align="end"
-            sideOffset={8}
-            style={{width: 234}}
-            trigger={
-              <ButtonText
-                label={labels?.[sortFilter]?.title}
-                mode="secondary"
-                size={isMobile ? 'small' : 'large'}
-                isActive={isOpen}
-                iconRight={<IconChevronDown />}
-              />
-            }
-            listItems={[
-              {
-                component: (
-                  <ListItemAction
-                    name="cost"
-                    mode={sortFilter === 'cost' ? 'selected' : 'default'}
-                    title={t('labels.networkCost')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-              {
-                component: (
-                  <ListItemAction
-                    name="popularity"
-                    mode={sortFilter === 'popularity' ? 'selected' : 'default'}
-                    title={t('labels.popularity')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-              {
-                component: (
-                  <ListItemAction
-                    name="security"
-                    mode={sortFilter === 'security' ? 'selected' : 'default'}
-                    title={t('labels.security')}
-                    bgWhite
-                  />
-                ),
-                callback: handleFilterChanged,
-              },
-            ]}
-          />
-        </SortFilter> */}
       </Header>
       <FormItem>
         {networks[networkType]['cost'].map(selectedNetwork => (
@@ -198,15 +137,31 @@ type SelectableNetworks = Record<
 
 const networks: SelectableNetworks = {
   main: {
-    cost: ['polygon', 'ethereum'],
-    // cost: ['polygon', 'arbitrum', 'ethereum'],
-    popularity: ['polygon', 'ethereum', 'arbitrum'],
-    security: ['ethereum', 'arbitrum', 'polygon'],
+    cost: ['bosagora_mainnet', 'acc_sidechain_mainnet', 'ethereum'],
+    popularity: ['bosagora_mainnet', 'acc_sidechain_mainnet', 'ethereum'],
+    security: ['bosagora_mainnet', 'acc_sidechain_mainnet', 'ethereum'],
   },
   test: {
-    cost: ['mumbai', 'goerli'],
-    // cost: ['mumbai', 'arbitrum-test', 'goerli'],
-    popularity: ['mumbai', 'goerli', 'arbitrum-test'],
-    security: ['goerli', 'arbitrum-test', 'mumbai'],
+    cost: [
+      'bosagora_testnet',
+      'bosagora_devnet',
+      'acc_sidechain_testnet',
+      'acc_sidechain_devnet',
+      'sepolia',
+    ],
+    popularity: [
+      'bosagora_testnet',
+      'bosagora_devnet',
+      'acc_sidechain_testnet',
+      'acc_sidechain_devnet',
+      'sepolia',
+    ],
+    security: [
+      'bosagora_testnet',
+      'bosagora_devnet',
+      'acc_sidechain_testnet',
+      'acc_sidechain_devnet',
+      'sepolia',
+    ],
   },
 };

@@ -1,4 +1,3 @@
-import {DaoSortBy} from '@aragon/sdk-client';
 import {
   ButtonGroup,
   ButtonText,
@@ -20,10 +19,8 @@ import {
   EXPLORE_FILTER,
   useDaosInfiniteQuery,
 } from 'hooks/useDaos';
-import {PluginTypes} from 'hooks/usePluginClient';
 import {useWallet} from 'hooks/useWallet';
 import {getSupportedNetworkByChainId, SupportedChainID} from 'utils/constants';
-import {toDisplayEns} from 'utils/library';
 import {Dashboard} from 'utils/paths';
 
 export function isExploreFilter(
@@ -42,9 +39,7 @@ export const DaoExplorer = () => {
   // conditional api queries
   const fetchFavorited = filterValue === 'favorite';
   const favoritedApi = useFavoritedDaosInfiniteQuery(fetchFavorited);
-  const daosApi = useDaosInfiniteQuery(fetchFavorited === false, {
-    sortBy: toDaoSortBy(filterValue),
-  });
+  const daosApi = useDaosInfiniteQuery(fetchFavorited === false, {});
 
   // resulting api response
   const exploreDaosApi = useMemo(
@@ -120,22 +115,12 @@ export const DaoExplorer = () => {
             exploreDaosApi.data?.pages?.map(dao => (
               <DaoCard
                 key={dao.address}
+                address={dao.address}
                 name={dao.metadata.name}
-                ensName={toDisplayEns(dao.ensDomain)}
-                logo={dao.metadata.avatar}
                 description={dao.metadata.description}
                 chainId={dao.chain}
                 onClick={() =>
-                  handleDaoClicked(
-                    toDisplayEns(dao.ensDomain) || dao.address,
-                    dao.chain
-                  )
-                }
-                daoType={
-                  (dao?.plugins?.[0]?.id as PluginTypes) ===
-                  'token-voting.plugin.dao.eth'
-                    ? 'token-based'
-                    : 'wallet-based'
+                  handleDaoClicked(dao.address, dao.chain as SupportedChainID)
                 }
               />
             ))
@@ -168,14 +153,6 @@ export const DaoExplorer = () => {
  * @param filter selected DAO category
  * @returns the equivalent of the SDK enum
  */
-function toDaoSortBy(filter: ExploreFilter) {
-  switch (filter) {
-    case 'newest':
-      return DaoSortBy.CREATED_AT;
-    default:
-      return DaoSortBy.CREATED_AT;
-  }
-}
 
 const ButtonGroupContainer = styled.div.attrs({
   className: 'flex',

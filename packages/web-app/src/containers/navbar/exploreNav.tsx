@@ -10,7 +10,7 @@ import {Container, GridLayout} from 'components/layout';
 
 const ExploreNav: React.FC = () => {
   const {t} = useTranslation();
-  const {address, ensName, ensAvatarUrl, isConnected, methods} = useWallet();
+  const {address, isConnected, methods} = useWallet();
   const {open} = useGlobalModalContext();
   const path = t('logo.linkURL');
 
@@ -39,14 +39,10 @@ const ExploreNav: React.FC = () => {
           <RightContent>
             <ActionsWrapper>
               <ButtonWallet
-                src={ensAvatarUrl || address}
+                src={address}
                 onClick={handleWalletButtonClick}
                 isConnected={isConnected}
-                label={
-                  isConnected
-                    ? ensName || address
-                    : t('navButtons.connectWallet')
-                }
+                label={isConnected ? address : t('navButtons.connectWallet')}
               />
             </ActionsWrapper>
           </RightContent>

@@ -74,9 +74,11 @@ const PublishModal: React.FC<PublishModalProps> = ({
       averageFee === undefined
         ? ['Error calculating costs', 'Error estimating fees']
         : [
-            new Intl.NumberFormat('en-US', {
+            new Intl.NumberFormat('ko-KR', {
               style: 'currency',
-              currency: 'USD',
+              currency: 'KRW',
+              minimumFractionDigits: 6,
+              maximumFractionDigits: 6,
             }).format(
               Number(
                 formatUnits(averageFee.toString(), nativeCurrency.decimals)

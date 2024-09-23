@@ -9,7 +9,7 @@ import {useNetwork} from 'context/network';
 import {usePrivacyContext} from 'context/privacyContext';
 import {useDaoDetailsQuery} from 'hooks/useDaoDetails';
 import useScreen from 'hooks/useScreen';
-import {CHAIN_METADATA, FEEDBACK_FORM} from 'utils/constants';
+import {CHAIN_METADATA, FEEDBACK_FORM, SupportedChainID} from 'utils/constants';
 import {
   Community,
   CreateDAO,
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   const {network} = useNetwork();
   const {handleWithFunctionalPreferenceMenu} = usePrivacyContext();
 
-  const {data: daoDetails} = useDaoDetailsQuery();
+  const {data: walletDetails} = useDaoDetailsQuery();
 
   const processInfo = useMemo(() => {
     const matches = matchRoutes(processPaths, pathname);
@@ -44,19 +44,18 @@ const Navbar: React.FC = () => {
 
   // set current dao as selected dao
   useEffect(() => {
-    if (daoDetails) {
+    if (walletDetails) {
       selectedDaoVar({
-        address: daoDetails.address,
-        ensDomain: daoDetails.ensDomain,
+        address: walletDetails.address,
         metadata: {
-          name: daoDetails.metadata.name,
-          avatar: daoDetails.metadata.avatar,
+          name: walletDetails.metadata.name,
+          description: walletDetails.metadata.description,
         },
-        chain: CHAIN_METADATA[network].id,
-        plugins: daoDetails.plugins,
+        chain: walletDetails.chain as SupportedChainID,
+        creationDate: walletDetails.creationDate,
       });
     }
-  }, [daoDetails, network]);
+  }, [walletDetails, network]);
 
   /*************************************************
    *                   Handlers                    *
@@ -82,7 +81,6 @@ const Navbar: React.FC = () => {
         processType={processInfo?.processType}
         onDaoSelect={handleOnDaoSelect}
         onWalletClick={handleWalletButtonClick}
-        onFeedbackClick={handleFeedbackButtonClick}
       />
     );
   }
@@ -91,7 +89,6 @@ const Navbar: React.FC = () => {
       isProcess={processInfo?.isProcess}
       onDaoSelect={handleOnDaoSelect}
       onWalletClick={handleWalletButtonClick}
-      onFeedbackClick={handleFeedbackButtonClick}
     />
   );
 };

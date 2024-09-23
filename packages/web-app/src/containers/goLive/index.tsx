@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {useTranslation} from 'react-i18next';
 import {useFormContext} from 'react-hook-form';
-// import {DAOFactory} from 'typechain';
 // TODO reintroduce this by adding back the postInstall script in packages.json
 // that executes the generate-abis-and-types command.
 import {
@@ -75,7 +74,7 @@ export const GoLiveFooter: React.FC = () => {
   const {t} = useTranslation();
   const {handlePublishDao} = useCreateDaoContext();
   const {open} = useGlobalModalContext();
-  const {isConnected, provider, isOnWrongNetwork} = useWallet();
+  const {isConnected, isOnWrongNetwork} = useWallet();
 
   const IsButtonDisabled = () =>
     !Object.values(reviewCheck).every(v => v === true);
@@ -85,8 +84,6 @@ export const GoLiveFooter: React.FC = () => {
     isConnected &&
       trackEvent('daoCreation_publishYourDAO_clicked', {
         network: getValues('blockchain')?.network,
-        wallet_provider: provider?.connection.url,
-        governance_type: getValues('membership'),
       });
 
     if (isConnected) {

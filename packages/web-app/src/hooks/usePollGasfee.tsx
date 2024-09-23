@@ -3,7 +3,7 @@ import {useCallback, useEffect, useState} from 'react';
 
 import {useNetwork} from 'context/network';
 import {fetchTokenPrice} from 'services/prices';
-import {GasFeeEstimation} from '@aragon/sdk-client-common';
+import {GasFeeEstimation} from 'multisig-wallet-sdk-client';
 
 /**
  * This hook returns the gas estimation for a particular transaction and

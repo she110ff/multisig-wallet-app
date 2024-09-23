@@ -27,11 +27,11 @@
     "privacyLinkURL": "https://aragon.org/privacy-policy"
   },
   "daoSwitcher": {
-    "title": "Select your DAO",
-    "subtitle": "Go back to explorer page"
+    "title": "다중 서명 지갑 선택",
+    "subtitle": "탐색 페이지로 이동"
   },
   "navButtons": {
-    "connectWallet": "Connect wallet",
+    "connectWallet": "지갑 연결하기",
     "giveFeedback": "Give feedback"
   },
   "labels": {
@@ -70,9 +70,9 @@
     "paste": "Paste",
     "max": "Max",
     "maxBalance": "Max balance",
-    "back": "Back",
-    "continue": "Continue",
-    "next": "Next",
+    "back": "뒤로",
+    "continue": "계속",
+    "next": "다음",
     "submitDeposit": "Submit deposit",
     "resources": "Resources",
     "startDate": "Start date",
@@ -85,17 +85,17 @@
     "dateTime": "Specific date & time",
     "resourcesHelptext": "Share external resources here.",
     "sortBy": "Sort by",
-    "mainNet": "Mainnet",
-    "testNet": "Testnet",
+    "mainNet": "메인 네트워크",
+    "testNet": "테스트 네트워크",
     "cheapest": "Cheapest",
     "safest": "Safest",
     "mostPopular": "Most popular",
     "networkCost": "Network cost",
     "security": "Security",
     "popularity": "Popularity",
-    "daoName": "DAO name",
-    "summary": "Summary",
-    "description": "Description",
+    "daoName": "다중 서명 지갑의 이름",
+    "summary": "요약",
+    "description": "다중 서명 지갑의 설명",
     "addLink": "Add link",
     "addWallet": "Add wallet",
     "selectWallet": "Select wallet",
@@ -110,9 +110,9 @@
     "logo": "Logo",
     "optional": "Optional",
     "minimumApprovalThreshold": "Approval threshold",
-    "multisigMembers": "Multisig members",
-    "minimumApproval": "Minimum approval",
-    "minimumParticipation": "Minimum participation",
+    "multisigMembers": "다중 서명 지갑의 맴버들",
+    "minimumApproval": "최소한의 승인수",
+    "minimumParticipation": "최소한의 참여도",
     "minimumDuration": "Minimum duration",
     "voteReplacement": "Vote change",
     "support": "Support",
@@ -125,6 +125,7 @@
     "supply": "Supply",
     "distributeTokens": "Distribute tokens",
     "proposalCreation": "Proposal creation",
+    "transactionCreation": "트랜잭션 생성자",
     "mintToken": "Mint your token",
     "duplicateAction": "Duplicate action",
     "resetAction": "Reset action",
@@ -140,40 +141,40 @@
     "nResults": "{{count}} results",
     "noResults": "No results to show",
     "noResultsSubtitle": "Try to modify your search to find the corresponding wallets.",
-    "notChangeable": "Not changeable",
-    "changeableVote": "Changeable with a vote",
+    "notChangeable": "변경이 불가",
+    "changeableVote": "투표를 통해 변경가능",
     "changeable": "Changeable",
     "etherscan": "Etherscan",
     "whitelistWallets": {
-      "address": "Address",
-      "addresses": "{{count}} addresses",
-      "addAddress": "Add address",
+      "address": "주소",
+      "addresses": "{{count}} 주소들",
+      "addAddress": "주소 추가",
       "uploadCSV": "Upload CSV",
-      "duplicateEntry": "Duplicate Entry",
-      "resetEntry": "Reset address",
-      "deleteEntry": "Remove address",
-      "resetAllEntries": "Reset all addresses",
-      "deleteAllEntries": "Delete all addresses",
-      "noWallets": "Choose a wallet to remove",
-      "addWalletsSubtitle": "Add a wallet to your DAO",
-      "totalWallets": "Total wallets"
+      "duplicateEntry": "항목을 복제",
+      "resetEntry": "주소 초기화",
+      "deleteEntry": "주소 삭제",
+      "resetAllEntries": "모든 주소 초기화",
+      "deleteAllEntries": "모든 주소 삭제",
+      "noWallets": "삭제할 지갑을 선택",
+      "addWalletsSubtitle": "지갑을 추가",
+      "totalWallets": "전체 지갑"
     },
     "review": {
-      "blockchain": "Blockchain",
-      "daoMetadata": "DAO details",
-      "voters": "Voters",
-      "votingParameters": "Voting parameters",
+      "blockchain": "블록체인",
+      "daoMetadata": "이름과 설명",
+      "voters": "맵버들의 지갑주소",
+      "votingParameters": "세부적인 파라메타들",
       "governance": "Governance",
-      "network": "Network",
+      "network": "네트워크",
       "eligibleVoters": "Eligible voters",
-      "distribution": "Distribution",
+      "distribution": "맴버들의 주소",
       "distributionLink": "See all {{walletCount}} addresses",
       "minimumParticipation": "{{walletCount}} wallets",
       "proposalThreshold": "Proposal threshold",
       "tokenHoldersWithTkns": "Token holders with ≥ {{tokenAmount}} {{tokenSymbol}}",
       "earlyExecution": "Early execution",
       "voteReplacement": "Vote change",
-      "multisigMinimumApprovals": "of {{count}} authorized addresses",
+      "multisigMinimumApprovals": "등록된 주소들 중 {{count}} 개",
       "existingTokens": {
         "currentHolders": "Current Holders"
       },
@@ -188,7 +189,7 @@
     "ago": "ago",
     "step": "Step",
     "of": "of",
-    "edit": "Edit",
+    "edit": "수정하기",
     "daoSettings": "DAO settings",
     "selectWallets": "Select wallets",
     "cancel": "Cancel",
@@ -239,11 +240,11 @@
   },
   "placeHolders": {
     "selectToken": "Select a token …",
-    "walletOrEns": "Type wallet address or ENS …",
+    "walletOrEns": "Type wallet address …",
     "searchTokens": "Type to search …",
-    "daoName": "Type your DAO's name …",
+    "daoName": "다중 서명 지갑의 이름을 입력하세요 …",
     "ensName": "aragon",
-    "daoDescription": "Type your summary …",
+    "daoDescription": "다중 서명 지갑의 설명을 입력하세요 …",
     "addResource": "Lens, Discord, etc."
   },
   "finance": {
@@ -391,7 +392,7 @@
       "endDate": "End date is required",
       "label": "Label is mandatory",
       "link": "Link is mandatory",
-      "recipient": "Recipient address is required",
+      "recipient": "수취인 주소가 필요합니다",
       "token": "Token is required",
       "time": "Time is required",
       "timezone": "Timezone is required",
@@ -404,14 +405,14 @@
     "startPast": "Process must not start in the past",
     "ensUnsupported": "Network does not support ENS",
     "fields": {
-      "tokenName": "Token name",
-      "tokenSymbol": "Token symbol"
+      "tokenName": "토큰 이름",
+      "tokenSymbol": "토큰 심벌"
     },
     "minimumApproval": {
-      "required": "Minimal approval has to be set.",
-      "lessThanOne": "Minimum approval can not be less than one address.",
-      "exceedMaxThreshold": "Minimum approval threshold cannot exceed total members.",
-      "membersRequired": "A multisig requires members."
+      "required": "최소한의 승인수를 설정해야 합니다.",
+      "lessThanOne": "최소한의 승인수는 하나의 주소보다 작을 수 없습니다.",
+      "exceedMaxThreshold": "최소한의 승인수는 총 맴버의 수를 초과할 수 없습니다.",
+      "membersRequired": "다중 서명 지갑은 맴버들가이 필요합니다.."
     }
   },
   "alert": {
@@ -431,7 +432,7 @@
     "maxDurationAlert": "The maximum duration is 365 days.",
     "minDurationAlert": "The minimum duration is one hour.",
     "startDateInPastAlert": "Start time can’t be in the past. ",
-    "wrongWalletNetwork": "Wrong wallet network",
+    "wrongWalletNetwork": "선택한 블록체인과 지갑의 네트워크가 동일하지 않습니다!",
     "wrongNetwork": {
       "title": "Wrong network",
       "description": "The action can't be executed because you are in the wrong network. Change to the <1>{{network}}</1> on your wallet and try again.",
@@ -463,13 +464,13 @@
       "removedAction": "Action removed",
       "addressAdded": "New address added",
       "inputCleared": "Cleared",
-      "inputCopied": "Copied",
-      "inputPasted": "Pasted",
+      "inputCopied": "복사되었습니다",
+      "inputPasted": "붙여넣었습니다",
       "walletConnected": "Wallet connected",
       "walletDisconnected": "Wallet disconnected",
       "max": "Max balance applied",
-      "favorited": "DAO favorited",
-      "unfavorite": "DAO removed from favorites"
+      "favorited": "즐겨찾기에 추가되었습니다",
+      "unfavorite": "즐겨찾기에 제거되었습니다"
     }
   },
   "warnings": {
@@ -509,7 +510,7 @@
     "tokenNotAvailableSubtitleDao": "Update the tokens or add a custom token to transfer."
   },
   "AddressModal": {
-    "noAddresses": "No address found"
+    "noAddresses": "주소를 찾을 수 없습니다"
   },
   "TransactionModal": {
     "approveSubtitle": "To sign your first transaction, you must approve Aragon App in your wallet.",
@@ -519,20 +520,20 @@
     "goToProposal": "Open your proposal",
     "launchGovernancePage": "Launch governance page",
     "launchDaoDashboard": "Launch DAO Dashboard",
-    "errorLabel": "Error while confirming transaction",
-    "gasEstimationErrorLabel": "Failed to estimate gas fee. You can still proceed. ",
-    "estimatedFees": "Estimated gas fees",
-    "maxFee": "Max fee",
-    "publishDaoSubtitle": "The fees below are the cost of using the selected blockchain.",
-    "publishDaoButtonLabel": "Approve transaction",
+    "errorLabel": "트랜잭션 승인 중 오류 발생",
+    "gasEstimationErrorLabel": "가스 요금을 추정하지 못했습니다. 계속 진행할 수 있습니다. ",
+    "estimatedFees": "예상 가스비",
+    "maxFee": "최대 수수료",
+    "publishDaoSubtitle": "아래 수수료는 선택한 블록체인 사용 비용입니다.",
+    "publishDaoButtonLabel": "트랜잭션 승인하기",
     "signDeposit": "Sign deposit",
-    "successLabel": "Transaction executed",
+    "successLabel": "트랜잭션이 실행되었습니다.",
     "synced": "Synced {{time}} sec ago",
-    "totalCost": "Total cost",
-    "tryAgain": "Try again",
+    "totalCost": "총 비용",
+    "tryAgain": "다시 시도해 주십시오.",
     "createProposal": "Create proposal",
     "createProposalNow": "Create proposal now",
-    "waiting": "Waiting for confirmation"
+    "waiting": "승인이 완료될때 까지 기다려 주십시오."
   },
   "AddActionModal": {
     "title": "Add action",
@@ -623,26 +624,26 @@
     }
   },
   "createDAO": {
-    "title": "Create your DAO",
+    "title": "다중 서명 지갑 생성하기",
     "overview": {
-      "title": "Build your DAO",
-      "description": "Start simple and learn as you go. You can always evolve your DAO in the future.",
-      "button": "Build your DAO"
+      "title": "단계별로 진행하기",
+      "description": "단계별로 진행하면 쉽게 생성할 수 있습니다.",
+      "button": "시작하기"
     },
     "step1": {
-      "label": "Step 1",
-      "title": "Select blockchain",
-      "description": "The chain you choose is where your tokens and assets are stored. If you already have a token, choose the chain your token is minted on. This cannot be changed later. For help selecting your chain, read our guide on choosing the best {{link}}.",
-      "descriptionLinkLabel": "blockchain for your DAO",
+      "label": "1 단계",
+      "title": "블록체인을 선택하기",
+      "description": "당신이 선택한 체인은 당신의 토큰과 자산이 저장되는 곳입니다. 만약 당신이 이미 토큰을 가지고 있다면, 당신의 토큰이 만들어진 체인을 선택하세요. 이것은 나중에 변경될 수 없습니다.",
+      "descriptionLinkLabel": "당신의 지갑을 위한 블록체인",
       "descriptionLinkURL": "https://aragon.org/how-to/choose-the-right-blockchain-for-your-dao"
     },
     "step2": {
-      "label": "Step 2",
-      "title": "Describe your DAO",
-      "description": "Name and define your DAO so new contributors know they've come to the right place. This information is displayed on the DAO Explore page and can be changed with a vote. For ideas on DAO branding, {{link}}.",
-      "nameSubtitle": "Maximum of 128 characters",
+      "label": "2 단계",
+      "title": "다중 서명 지갑의 이름/설명 설정",
+      "description": "이름과 설명을 추가하세요.",
+      "nameSubtitle": "최대 128 자",
       "logoSubtitle": "JPG, PNG, GIF, or SVG of no more than 3MB. We recommend 1024x1024px.",
-      "descriptionSubtitle": "Describe your DAO's purpose in a few sentences. This is listed on the Explore page so new contributors can find you.",
+      "descriptionSubtitle": "지갑의 목적을 몇 문장으로 설명하세요. 이것은 지갑의 목적을 다른 참여자와 서로 공유하기 위해서 입니다.",
       "linksSubtitle": "Links to your DAO's website, social media profiles, Discord, or other places your community gathers.",
       "metadataOverviewGuide": "read our guide",
       "descriptionLinkLabel": "read our guide",
@@ -650,9 +651,9 @@
       "ensNameSubtitle": "This will be your DAO’s unique ENS subdomain, created automatically for you. Lowercase letters, numbers, and the dash '-' are all acceptable characters; ideally, the character count should be under 128."
     },
     "step3": {
-      "label": "Step 3",
-      "title": "Define membership",
-      "description": "Decide the type of voting your DAO uses. You can change these settings with a vote. For help deciding which type of governance is best for you, {{link}}.",
+      "label": "3 단계",
+      "title": "맴버 설정",
+      "description": "다중 서명 지갑을 사용하는 맴버들의 지갑주소들을 입력합니다.",
       "communityOverviewGuide": "read this guide",
       "newToken": "No",
       "authorisedWalletsSubtitle": "Add wallets of members who are authorized to participate in governance",
@@ -687,11 +688,11 @@
       },
       "existingTokenSubtitle": "Yes, we already have a token.",
       "tokenMembership": "Token holders",
-      "multisigMembership": "Multisig members",
+      "multisigMembership": "멀티 서명 지갑의 맴버들",
       "multisigMembershipSubtitle": "Only multisig members can vote. 1 wallet address equals 1 approval.",
-      "multisigMembers": "Multisig members",
-      "multisigMembersHelptext": "There is no limit on the number of addresses on your multisig. Addresses can create proposals, create and approve transactions, and suggest changes to the DAO settings after creation. ",
-      "multisigMembersWalletAlert": "Your connected wallet was automatically added to the list. You can remove it if you like.",
+      "multisigMembers": "멀티 서명 지갑의 맴버들",
+      "multisigMembersHelptext": "멀티시그 상의 주소 수에는 최대 50개 입니다. 주소는 트랜잭션 작성 및 승인 등이 가능합니다.",
+      "multisigMembersWalletAlert": "연결된 지갑이 자동으로 목록에 추가되었습니다. 원하시면 제거하실 수 있습니다.",
       "multisigEligibilityTitle": "Proposal creation",
       "multisigEligibilitySubtitle": "Specify who is permitted to create proposals.",
       "multisigEligibilityMobileTitle": "Who is elegible?",
@@ -723,7 +724,7 @@
         },
         "multisigMembers": {
           "description": "Only the addresses added above can create proposals.",
-          "title": "Multisig members"
+          "title": "멀티 서명 지갑의 맴버들"
         },
         "tokenHolders": {
           "description": "Only token holders with at least a certain number of tokens can create proposals.",
@@ -740,9 +741,9 @@
       "distributeTokensHelpertextLinkURL": "https://aragon.org/how-to/distribute-a-dao-governance-token"
     },
     "step4": {
-      "label": "Step 4",
-      "title": "Select governance settings",
-      "description": "These are the rules that define how decisions are made in your DAO. How many people have to participate? How much support is needed? How long are proposals open for voting? Learn more about in {{link}}.",
+      "label": "4 단계",
+      "title": "상세 설정",
+      "description": "몇 개의 주소가 승인하면 트랜잭션이 실행되는지를 설정합니다.",
       "bestPractices": "best practices on governance",
       "supportThresholdSubtitle": "The percentage of tokens that vote \"Yes\" in support of a proposal, out of all tokens that have voted, must be greater than this value for the proposal to pass.",
       "minimumParticipationSubtitle": "The percentage of tokens that participate in a proposal, out of the total {{gTokenSymbol}} supply, must be greater than or equal to this value for the proposal to pass.",
@@ -751,18 +752,18 @@
       "days": "Days",
       "hours": "Hours",
       "minutes": "Minutes",
-      "minimumApprovalSubtitle": "Minimum approval is the amount of addresses in the authorized list that must approve a proposal for it to pass. ",
-      "minApprovalAddressCount": "of {{count}} addresses",
+      "minimumApprovalSubtitle": "최소한 승인수는 제안이 통과되도록 승인해야 하는 주소의 갯수입니다. ",
+      "minApprovalAddressCount": "전체 {{count}} 개",
       "alerts": {
         "minimumApprovalAlert": "of {{amount}} {{tokenSymbol}}",
         "minimumParticipationAlert": "Rounded up to {{percentage}}% equals {{walletCount}} wallets have to vote",
-        "minority": "Proposals could be approved by a minority rather than a majority.",
-        "majority": "Proposal will be approved by majority",
-        "absoluteMajority": "This approval threshold might be too high to reach regularly. Consider setting something lower. "
+        "minority": "소수의 승인 만으로 트랜잭션이 실행될 수 있는 위험이 있습니다.",
+        "majority": "다수의 승인으로 트랜잭션이 실행됩니다.",
+        "absoluteMajority": "도달하기에는 너무 높을 수 있습니다. 더 낮게 설정하는 것을 고려하십시오."
       },
       "descriptionLinkLabel": "this guide",
       "descriptionLinkURL": "https://aragon.org/how-to/governance-ii-setting-dao-governance-thresholds",
-      "shortTitle": "Select governance settings",
+      "shortTitle": "상세 설정",
       "wrappedReferenceTitle": "Reference values",
       "wrappedReferenceDesc": "The amount of {{gTokenSymbol}} that must vote to meet minimum participation depends on the amount of {{tokenSymbol}} that is wrapped. The values on this screen with an asterisk are for reference only. You can evaluate different scenarios by adjusting the following value. Learn more about {{link}}.",
       "wrappedReferenceAlertInfo": "These values are for reference only and do not affect your \"governance settings\"!",
@@ -778,16 +779,16 @@
       "wrappedReferenceParticipationValueLabel": "{{gTokenSymbol}} *"
     },
     "review": {
-      "title": "Deploy your DAO",
-      "description": "Double-check that everything is correct before launching your organization.",
+      "title": "다중 서명 지갑을 배포하기",
+      "description": "배포를 시작하기 전에 모든 것이 올바른지 다시 확인하십시오.",
       "network": "{{network}} net",
       "distributionLink": "See {{count}} addresses",
       "days": "{{days}} days",
       "hours": "{{hours}} hours",
       "minutes": "{{minutes}} minutes",
-      "daoUpdates": "Except for the chain you choose and the token you mint, you can change all these values later with a vote in your DAO.",
-      "acceptContent": "Accept proposed content.",
-      "valuesCorrect": "These values are correct",
+      "daoUpdates": "나중에 맴버들의 주소와 파라메타를 변경할 수 있습니다.",
+      "acceptContent": "제안된 내용 수락.",
+      "valuesCorrect": "이 값들은 정확합니다",
       "proposalCreation": "Token holders with ≥{{token}} {{symbol}}"
     }
   },
@@ -839,7 +840,7 @@
     "abstainHelptext": "Your choice will be counted for \"Abstain\"",
     "noHelptext": "Your choice will be counted for \"No\"",
     "token": "Token",
-    "inputPlaceholder": "Wallet, ENS, or email",
+    "inputPlaceholder": "Wallet, email",
     "options": "Options",
     "yes+no": "Yes, no, or abstain",
     "strategy": "Strategy",
@@ -885,7 +886,7 @@
     "emptyState": {
       "titleSearch": "No result found for {{query}}",
       "title": "No voters yet",
-      "subtitle": "Search for another wallet address or ENS"
+      "subtitle": "Search for another wallet address"
     },
     "label": {
       "in": "In"
@@ -893,16 +894,16 @@
   },
   "explore": {
     "hero": {
-      "title": "Explore the DAO World",
-      "subtitle1": "Build your DAO, explore communities, and find inspiration for your project all in one place."
+      "title": "다중 서명 지갑",
+      "subtitle1": "다중 서명 지갑을 생성하여 자산을 안전하게 보호하세요."
     },
     "explorer": {
-      "title": "Explore DAOs",
-      "myDaos": "My DAOs",
+      "title": "탐색",
+      "myDaos": "즐겨찾기",
       "popular": "Popular",
-      "newest": "Newest",
+      "newest": "전체",
       "walletBased": "Wallet-based",
-      "showMore": "Show more",
+      "showMore": "더보기...",
       "tokenBased": "Token-based"
     },
     "activeProposals": "Active proposals",
@@ -918,7 +919,7 @@
       "securedByAragon": "Secured by Aragon OSx"
     },
     "learn": {
-      "linkLabel": "Learn about DAOs",
+      "linkLabel": "다중 서명 지갑에 대해서 학습하기",
       "linkURL": "https://aragon.org/education-portal"
     }
   },
@@ -948,14 +949,14 @@
   },
   "cta": {
     "create": {
-      "title": "Create your DAO",
-      "description": "Mint tokens, set governance parameters, and deploy your DAO on-chain in minutes with our no-code setup process.",
-      "actionLabel": "Create a DAO"
+      "title": "다중 서명 지갑",
+      "description": "다중서명 지갑은 트랜잭션을 위해 하나 이상의 서명을 요구함으로써 보안을 강화한 기술입니다.",
+      "actionLabel": "지갑 생성하기"
     },
     "learn": {
-      "title": "Learn about DAOs",
-      "description": "Find inspiration and learn about DAOs in our education portal designed for builders at every stage of the journey.",
-      "actionLabel": "Learn about DAOs"
+      "title": "학습하기",
+      "description": "다중 서명 지갑을 생성하고 사용하는 방법을 학습합니다.",
+      "actionLabel": "다중 서명 지갑에 관해 배우기"
     },
     "build": {
       "title": "Build faster",
@@ -975,9 +976,9 @@
     "editDaoSettings": "Edit DAO settings",
     "editSubtitle": "To edit settings such as the logo and description, you'll need to create a proposal and put it to vote in your DAO.",
     "resetChanges": "Reset changes",
-    "edit": "Edit settings",
-    "newSettings": "New settings",
-    "oldSettings": "Old settings",
+    "edit": "편집",
+    "newSettings": "새로운 설정",
+    "oldSettings": "이전 설정",
     "proposeSettingsInfo": "To make changes to the settings, create a proposal and put it to vote in your DAO."
   },
   "dashboard": {
@@ -1004,7 +1005,7 @@
       "headerTitle": "Deposit assets",
       "headerDescription": "Send assets to the DAO treasury",
       "inputLabelEns": "DAO treasury",
-      "inputHelptextEns": "Copy the ENS or address below and use your wallet's send feature to send money to your DAO's treasury.",
+      "inputHelptextEns": "Copy the address below and use your wallet's send feature to send money to your DAO's treasury.",
       "ctaLabel": "View all transfers",
       "cancelLabel": "Cancel",
       "inputLabelBlockchain": "Blockchain",
@@ -1013,11 +1014,11 @@
       "statusBlockchain": "Connected"
     },
     "exitProcess": {
-      "description": "If you leave the process, you'll lose all the information you've put in. Would you like to exit the process?",
-      "ctaLabel": "Yes, exit now",
-      "cancelLabel": "No, stay",
+      "description": "종료하면 입력한 모든 정보를 잃게 됩니다. 종료하시겠습니까?",
+      "ctaLabel": "예, 종료합니다",
+      "cancelLabel": "아니요, 작업을 계속 진행합니다",
       "titleProposalCreation": "Exit proposal creation",
-      "titleDaoCreation": "Exit DAO creation"
+      "titleDaoCreation": "다중 서명 지갑의 생성 종료"
     },
     "claimPoap": {
       "ctaLabel": "Claim POAP now",
@@ -1156,7 +1157,7 @@
     }
   },
   "inputWallet": {
-    "placeholder": "ENS or 0x…",
+    "placeholder": "0x…",
     "ensAlertSuccess": "ENS resolved successfully",
     "addressAlertSuccess": "Address resolved successfully",
     "ensAlertWarning": "This network does not support ENS domains",
