@@ -8,7 +8,6 @@ import {Dropdown} from '../dropdown';
 import {
   IconBlock,
   IconChevronDown,
-  IconCommunity,
   IconCopy,
   IconFavoriteDefault,
   IconFavoriteSelected,
@@ -22,13 +21,11 @@ const DEFAULT_LINKS_SHOWN = 3;
 
 export type HeaderDaoProps = {
   daoName: string;
-  daoEnsName: string;
   daoAvatar?: string;
   daoUrl: string;
   description: string;
   created_at: string;
   daoChain: string;
-  daoType: string;
   favorited?: boolean;
   links?: Array<{
     label: string;
@@ -48,13 +45,11 @@ type DescriptionProps = {
 
 export const HeaderDao: React.FC<HeaderDaoProps> = ({
   daoName,
-  daoEnsName,
   daoAvatar,
   daoUrl,
   description,
   created_at,
   daoChain,
-  daoType,
   favorited = false,
   links = [],
   translation,
@@ -101,9 +96,7 @@ export const HeaderDao: React.FC<HeaderDaoProps> = ({
       <ContentWrapper>
         <Content>
           <Title>{daoName}</Title>
-          <p className="mt-0.25 desktop:mt-0.5 font-semibold text-ui-500">
-            {daoEnsName}
-          </p>
+          <p className="mt-0.25 desktop:mt-0.5 font-semibold text-ui-500"></p>
           <Link
             label={daoUrl}
             iconRight={<IconCopy />}
@@ -145,10 +138,6 @@ export const HeaderDao: React.FC<HeaderDaoProps> = ({
           <NetworkDetails>
             <IconBlock className="text-primary-400" />
             <DetailsText className="capitalize">{daoChain}</DetailsText>
-          </NetworkDetails>
-          <NetworkDetails>
-            <IconCommunity className="text-primary-400" />
-            <DetailsText>{daoType}</DetailsText>
           </NetworkDetails>
         </NetworkDetailsContainer>
         <ActionWrapper>

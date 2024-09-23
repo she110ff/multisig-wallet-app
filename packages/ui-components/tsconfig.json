@@ -1,5 +1,5 @@
 {
-  "include": ["src", "typings/**/*.d.ts"],
+  "include": ["src", "stories", "typings/**/*.d.ts"],
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],

@@ -35,7 +35,7 @@ const chains = [
   },
   {
     name: 'Ethereum',
-    domain: 'L1 Blockchain',
+    domain: 'Main Chain',
     tag: 'most secure',
     logo: 'https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880',
   },
